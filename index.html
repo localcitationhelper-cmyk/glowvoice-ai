@@ -920,17 +920,18 @@
         </p>
       </div>
       <div style="position:relative; border-radius:12px; overflow:hidden; border:1px solid rgba(201,168,76,0.2); box-shadow:0 0 80px rgba(201,168,76,0.08), 0 40px 80px rgba(0,0,0,0.6);">
-        <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden;">
-          <iframe
-            style="position:absolute; top:0; left:0; width:100%; height:100%; display:block;"
-            src="https://www.youtube.com/embed/CgO2GA-z2Ts?playsinline=1"
-            title="GlowVoice AI Demo"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-            allowfullscreen
-            playsinline>
-          </iframe>
+        <div id="yt-container" style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; cursor:pointer; background:#000;">
+          <img id="yt-thumb" src="https://img.youtube.com/vi/CgO2GA-z2Ts/maxresdefault.jpg" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;" alt="GlowVoice AI Demo" />
+          <div id="yt-play" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:72px; height:72px; background:rgba(255,0,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
         </div>
+        <script>
+          document.getElementById('yt-container').addEventListener('click', function() {
+            this.innerHTML = '<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/CgO2GA-z2Ts?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            this.style.cursor = 'default';
+          });
+        </script>
       </div>
     </div>
   </section>
